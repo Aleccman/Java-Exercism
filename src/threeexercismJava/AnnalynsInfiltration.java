@@ -36,10 +36,10 @@ public class AnnalynsInfiltration {
 	 */
 
 	public static boolean annalysInfiltrationCanFasAttack(boolean knightIsAwake) {
-		if (knightIsAwake) {
-			return false;
+		if (knightIsAwake==true) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	/**
