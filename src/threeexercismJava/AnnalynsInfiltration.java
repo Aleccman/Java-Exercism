@@ -11,6 +11,21 @@ public class AnnalynsInfiltration {
 
 	public static void main(String[] args) {
 
+//      value method one
+
+//		boolean  valueMethodOne =annalysInfiltrationCanFasAttack(false);
+//		System.out.println(valueMethodOne);
+
+//		value method two
+//		boolean valueMethodTwo = annalynsInfiltrationcanSpy(false, false, false);
+//		System.out.println(valueMethodTwo);
+
+//		boolean valueMethodThree =annalynsInfiltrationCanSignalPrisoner(false, true);
+//		System.out.println(valueMethodThree);
+
+		boolean valueMethodFour = annalynsInfiltrationCanFreePrisoner(false, false, false, false);
+		System.out.println(valueMethodFour);
+
 	}
 
 	/**
@@ -20,9 +35,11 @@ public class AnnalynsInfiltration {
 	 * Otherwise, returns false:
 	 */
 
-	public static boolean annalysInfiltrationCanFasAttack(boolean parameterOne) {
-		return parameterOne;
-
+	public static boolean annalysInfiltrationCanFasAttack(boolean knightIsAwake) {
+		if (knightIsAwake) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -32,15 +49,11 @@ public class AnnalynsInfiltration {
 	 * upon, based on the state of the three characters. Otherwise, returns false:
 	 */
 
-	public static boolean annalynsInfiltrationcanSpy(boolean[] parameterOne) {
-		for (boolean b : parameterOne) {
-			if (b) {
-				return b;
-			}
-
-		}
+	public static boolean annalynsInfiltrationcanSpy(boolean knightIsAwake, boolean archerIsAwake,
+			boolean prisonerIsAwake) {
+		if (knightIsAwake == true || archerIsAwake == true || prisonerIsAwake == true)
+			return true;
 		return false;
-
 	}
 
 	/**
@@ -50,6 +63,13 @@ public class AnnalynsInfiltration {
 	 * signalled, based on the state of the two characters. Otherwise, returns false
 	 */
 
+	public static boolean annalynsInfiltrationCanSignalPrisoner(boolean archerIsAwake, boolean prisonerIsAwake) {
+		if (archerIsAwake == true && prisonerIsAwake == true || prisonerIsAwake == true) {
+			return true;
+		}
+		return false;
+	}
+
 	/**
 	 * Implement the (static) AnnalynsInfiltration.canFreePrisoner() method that
 	 * takes four boolean values. The first three parameters indicate if the knight,
@@ -58,4 +78,10 @@ public class AnnalynsInfiltration {
 	 * prisoner can be freed based on the state of the three characters and
 	 * Annalyn's pet dog presence. Otherwise, it returns false:
 	 */
+
+	public static boolean annalynsInfiltrationCanFreePrisoner(boolean knightIsAwake, boolean archerIsAwake,
+			boolean prisonerIsAwake, boolean petDogIsPresent) {
+		
+		return false;
+	}
 }
