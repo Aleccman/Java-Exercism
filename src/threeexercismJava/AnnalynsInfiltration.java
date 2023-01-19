@@ -11,18 +11,23 @@ public class AnnalynsInfiltration {
 
 	public static void main(String[] args) {
 
-//      value method one
+//      Value method one
 
-//		boolean  valueMethodOne =annalysInfiltrationCanFasAttack(false);
-//		System.out.println(valueMethodOne);
+		boolean  valueMethodOne =annalysInfiltrationCanFasAttack(false);
+		System.out.println(valueMethodOne);
 
-//		value method two
-//		boolean valueMethodTwo = annalynsInfiltrationcanSpy(false, false, false);
-//		System.out.println(valueMethodTwo);
+//		Value method two
+		
+		boolean valueMethodTwo = annalynsInfiltrationcanSpy(false, false, false);
+		System.out.println(valueMethodTwo);
 
-//		boolean valueMethodThree =annalynsInfiltrationCanSignalPrisoner(false, true);
-//		System.out.println(valueMethodThree);
+//      Value method three
 
+		boolean valueMethodThree =annalynsInfiltrationCanSignalPrisoner(false, true);
+		System.out.println(valueMethodThree);
+
+//      Value method four
+		
 		boolean valueMethodFour = annalynsInfiltrationCanFreePrisoner(true, false, true, true);
 		System.out.println(valueMethodFour);
 
