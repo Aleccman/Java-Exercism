@@ -23,7 +23,7 @@ public class AnnalynsInfiltration {
 //		boolean valueMethodThree =annalynsInfiltrationCanSignalPrisoner(false, true);
 //		System.out.println(valueMethodThree);
 
-		boolean valueMethodFour = annalynsInfiltrationCanFreePrisoner(false, false, false, false);
+		boolean valueMethodFour = annalynsInfiltrationCanFreePrisoner(true, false, true, true);
 		System.out.println(valueMethodFour);
 
 	}
@@ -36,7 +36,7 @@ public class AnnalynsInfiltration {
 	 */
 
 	public static boolean annalysInfiltrationCanFasAttack(boolean knightIsAwake) {
-		if (knightIsAwake==true) {
+		if (knightIsAwake == true) {
 			return true;
 		}
 		return false;
@@ -64,12 +64,12 @@ public class AnnalynsInfiltration {
 	 */
 
 	public static boolean annalynsInfiltrationCanSignalPrisoner(boolean archerIsAwake, boolean prisonerIsAwake) {
-		if (archerIsAwake == true && prisonerIsAwake == true || prisonerIsAwake == true) {
+		if (prisonerIsAwake== true && archerIsAwake==false) {
 			return true;
 		}
 		return false;
 	}
-
+	
 	/**
 	 * Implement the (static) AnnalynsInfiltration.canFreePrisoner() method that
 	 * takes four boolean values. The first three parameters indicate if the knight,
@@ -81,7 +81,13 @@ public class AnnalynsInfiltration {
 
 	public static boolean annalynsInfiltrationCanFreePrisoner(boolean knightIsAwake, boolean archerIsAwake,
 			boolean prisonerIsAwake, boolean petDogIsPresent) {
-		
+		if (petDogIsPresent == true && archerIsAwake == false) {
+			return true;
+		} else if (prisonerIsAwake == true && knightIsAwake == false && archerIsAwake == false) {
+			return true;
+		} else if (prisonerIsAwake == false) {
+			return false;
+		}
 		return false;
 	}
 }
