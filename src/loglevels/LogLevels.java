@@ -30,8 +30,6 @@ public class LogLevels {
 	}
 
 	public static String reformat(String logLine) {
-//		return message(logLine.substring(logLine.indexOf(":") + 1)
-//				.concat(" " + logLevel(logLine)));
 		return String.format("%s (%s)", message(logLine),logLevel(logLine));
 
 	}
