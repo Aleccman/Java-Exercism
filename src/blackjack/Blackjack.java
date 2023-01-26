@@ -32,11 +32,15 @@ public class Blackjack {
 		cardValue.put("other", 0);
 
 //		System.out.println(isBlackjack("ace", "ten"));
+
+		System.out.println(isBlackjack("ace", "ten"));
+
 //		System.out.println(parseCard("ace"));
 	}
 
 	public static int parseCard(String card) {
 		return cardValue.get(card.toLowerCase());
+
 	}
 
 	public static boolean isBlackjack(String card1, String card2) {
@@ -67,5 +71,4 @@ public class Blackjack {
 			return smallHand(handScore, dealerScore);
 		}
 	}
-
 }
