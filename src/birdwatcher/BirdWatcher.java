@@ -9,12 +9,19 @@ package birdwatcher;
  */
 public class BirdWatcher {
 
+//	private static int[] countlastWeek = new int[] { 0, 2, 5, 3, 7, 8, 4 };
+
+	public static int[] countBirds = { 0, 2, 5, 3, 7, 8, 4 };
+
 	public static void main(String[] args) {
 
+		for (int count : countBirds) {
+			System.out.println(count);
+		}
 	}
 
 	public static int[] getLastWeek() {
-		throw new UnsupportedOperationException("Please implement the BirdCount.getLastWeek() method");
+		return countBirds;
 	}
 
 	public static int getToday() {
