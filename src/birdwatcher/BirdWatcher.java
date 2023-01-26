@@ -10,7 +10,6 @@ package birdwatcher;
 public class BirdWatcher {
 
 	public static void main(String[] args) {
-//		int [] twoInts = new int 2;
 
 	}
 
