@@ -12,6 +12,13 @@ import java.util.Map;
  */
 public class Blackjack {
 
+	private static final int BLACKJACK = 21;
+
+	private static final String STAND = "S";
+	private static final String HIT = "H";
+	private static final String SPLIT = "P";
+	private static final String AUTOMATICALLY_WIN = "W";
+
 	public static Map<String, Integer> cardValue = new HashMap<String, Integer>();
 
 	public static void main(String[] args) {
@@ -31,11 +38,8 @@ public class Blackjack {
 		cardValue.put("king", 10);
 		cardValue.put("other", 0);
 
-//		System.out.println(isBlackjack("ace", "ten"));
-
 		System.out.println(isBlackjack("ace", "ten"));
 
-//		System.out.println(parseCard("ace"));
 	}
 
 	public static int parseCard(String card) {
@@ -44,28 +48,26 @@ public class Blackjack {
 	}
 
 	public static boolean isBlackjack(String card1, String card2) {
-		return (parseCard(card1.toLowerCase()) + (parseCard(card2.toLowerCase())) == 21) ? true : false;
+		return (parseCard(card1.toLowerCase()) + (parseCard(card2.toLowerCase())) == BLACKJACK) ? true : false;
 	}
 
 	public static String largeHand(boolean isBlackjack, int dealerScore) {
 		if (!isBlackjack) {
-			return "P";
+			return SPLIT;
 		} else if (dealerScore < 10) {
-			return "W";
+			return AUTOMATICALLY_WIN;
 		} else {
-			return "S";
+			return STAND;
 		}
 	}
 
 	public static String smallHand(int handScore, int dealerScore) {
 		if (handScore > 16) {
-			return "S";
-		} else if (handScore < 12) {
-			return "H";
-		} else if (dealerScore > 6) {
-			return "H";
+			return STAND;
+		} else if (handScore < 12 && dealerScore > 6) {
+			return HIT;
 		}
-		return "S";
+		return STAND;
 
 	}
 
@@ -85,4 +87,5 @@ public class Blackjack {
 			return smallHand(handScore, dealerScore);
 		}
 	}
+
 }
