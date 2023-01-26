@@ -44,15 +44,29 @@ public class Blackjack {
 	}
 
 	public static boolean isBlackjack(String card1, String card2) {
-		return (cardValue.get(card1.toLowerCase()) + cardValue.get(card2.toLowerCase()) == 21) ? true : false;
+		return (parseCard(card1.toLowerCase()) + (parseCard(card2.toLowerCase())) == 21) ? true : false;
 	}
 
 	public static String largeHand(boolean isBlackjack, int dealerScore) {
-		return null;
+		if (!isBlackjack) {
+			return "P";
+		} else if (dealerScore < 10) {
+			return "W";
+		} else {
+			return "S";
+		}
 	}
 
 	public static String smallHand(int handScore, int dealerScore) {
-		return null;
+		if (handScore > 16) {
+			return "S";
+		} else if (handScore < 12) {
+			return "H";
+		} else if (dealerScore > 6) {
+			return "H";
+		}
+		return "S";
+
 	}
 
 	// FirstTurn returns the semi-optimal decision for the first turn, given the
